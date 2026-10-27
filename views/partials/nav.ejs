@@ -1,0 +1,22 @@
+<nav class="sticky top-0 z-50 bg-zinc-900/95 backdrop-blur border-b border-zinc-800 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <a href="/feed" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white text-sm font-black shadow-md shadow-blue-500/20">S</span>
+        <span>Social<span class="text-blue-500">Hub</span></span>
+    </a>
+    <div class="flex items-center gap-3 sm:gap-5 text-sm font-medium">
+        <a href="/feed" class="text-zinc-300 hover:text-white transition-colors px-2 py-1 rounded-md">Feed</a>
+        <a href="/profile" class="text-zinc-300 hover:text-white transition-colors flex items-center gap-2 px-2 py-1 rounded-md">
+            <% if (user && user.profilePic && user.profilePic !== 'default-avatar.svg') { %>
+                <img src="/images/uploads/<%= user.profilePic %>" class="w-7 h-7 rounded-full object-cover border border-zinc-700" alt="avatar">
+            <% } else { %>
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold uppercase">
+                    <%= (user && user.name) ? user.name[0] : 'U' %>
+                </div>
+            <% } %>
+            <span class="hidden sm:inline text-zinc-200"><%= (user && user.name) ? user.name : 'Profile' %></span>
+        </a>
+        <a href="/logout" class="bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition">
+            Logout
+        </a>
+    </div>
+</nav>

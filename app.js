@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -13,10 +14,11 @@ const userModel = require('./models/user');
 const postModel = require('./models/post');
 
 const PORT = process.env.PORT || 3001;
-const JWT_SECRET = 'socialsecretkey123';
+const JWT_SECRET = process.env.JWT_SECRET || 'socialsecretkey123';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/dataaso';
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/dataaso')
+mongoose.connect(MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('MongoDB connection error:', err));
 

@@ -185,16 +185,7 @@ SOCIAL/
 5. **Open in browser**:
    Navigate to [http://localhost:3001](http://localhost:3001)
 
----
 
-## 🎯 Key Engineering Highlights (Interview Discussion)
-
-- **Multipart Form Processing**: Demonstrates hands-on knowledge of handling multi-part binary data streams using `multer.diskStorage()`, preserving file extensions and managing file upload limits.
-- **Relational Data in NoSQL**: Utilizes bidirectional referencing between the `User` and `Post` collections, populated dynamically via Mongoose's `.populate()`.
-- **Security & Authorization Checks**: Enforces server-side ownership checks before allowing updates or deletes to prevent Insecure Direct Object References (IDOR).
-- **Graceful Error Handling**: Implements `try/catch` wrappers around JWT verification and database queries to ensure the server remains resilient against malformed inputs.
-
----
 
 ## 📄 License
 
